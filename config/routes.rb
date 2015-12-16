@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :releases
+  resources :clients
   root 'releases#index'
   
   resources :releases

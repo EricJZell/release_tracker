@@ -1,0 +1,33 @@
+<%= form_for(@release) do |f| %>
+  <% if @release.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@release.errors.count, "error") %> prohibited this release from being saved:</h2>
+
+      <ul>
+      <% @release.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :branch_name %><br>
+    <%= f.text_field :branch_name %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_name %><br>
+    <%= f.text_field :tag_name %>
+  </div>
+  <div>
+    <% Client.all.each do |client| %>
+      <%= check_box_tag "release[client_ids][]", client.id, f.object.clients.include?(client) %>
+      <%= client.abbreviated_name %>
+    <% end %>
+  </div>
+
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

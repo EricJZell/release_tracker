@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Branch name:</strong>
+  <%= @release.branch_name %>
+</p>
+
+<p>
+  <strong>Tag name:</strong>
+  <%= @release.tag_name %>
+</p>
+
+<p>
+  <strong>Clients affected:</strong>
+  <%= @clients %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @release.created_at %>
+</p>
+
+<p>
+  <strong>Tag name added at:</strong>
+  <%= @tag_date %>
+</p>
+
+<%= link_to 'Edit', edit_release_path(@release) %> |
+<%= link_to 'Back', releases_path %>
