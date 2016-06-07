@@ -1,10 +1,11 @@
 class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /releases
   # GET /releases.json
   def index
-    @releases = Release.all
+    @releases = Release.includes(:app).all.order("created_at desc")
   end
 
   # GET /releases/1
@@ -29,7 +30,8 @@ class ReleasesController < ApplicationController
 
   # GET /releases/new
   def new
-    @release = Release.new
+    @release = Release.new()
+    @release.app = App.find(params[:app_id]) if params[:app_id]
   end
 
   # GET /releases/1/edit
@@ -39,7 +41,6 @@ class ReleasesController < ApplicationController
   # POST /releases
   # POST /releases.json
   def create
-    binding.pry
     @release = Release.new(release_params)
 
     respond_to do |format|
@@ -85,6 +86,6 @@ class ReleasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def release_params
-      params.require(:release).permit(:branch_name, :tag_name, client_ids: [])
+      params.require(:release).permit(:branch_name, :app_id, :tag_name, client_ids: [])
     end
 end

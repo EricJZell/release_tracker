@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :apps
   resources :releases
   resources :clients
-  root 'releases#index'
+  root 'apps#index'
   
   resources :releases
   
