@@ -8,6 +8,7 @@ development:
 production:
   encoding: unicode
   adapter: postgresql
+  username: lglicksteen
   database: release_tracker_production
   host: localhost
 

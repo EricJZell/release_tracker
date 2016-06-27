@@ -1,6 +1,5 @@
 class ReleasesController < ApplicationController
   before_action :set_release, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /releases
   # GET /releases.json
@@ -20,7 +19,7 @@ class ReleasesController < ApplicationController
     else
       @clients = "No clients affected by this release"
     end
-    
+
     if @release.tag_name.present?
       @tag_date = @release.updated_at
     else
