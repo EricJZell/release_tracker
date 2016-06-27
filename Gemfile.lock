@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/gwshaw/noisy_partials.git
+  revision: 9e7110bb400cd7d366adc706d7ce0934cfd3c0eb
+  specs:
+    noisy_partials (0.0.0)
+      rails (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -153,6 +160,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
+  noisy_partials!
   pg
   pry
   rails (= 4.2.5)
@@ -164,4 +172,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.5
+   1.12.5
