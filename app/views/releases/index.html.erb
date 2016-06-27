@@ -13,17 +13,16 @@
   </thead>
 
   <tbody>
-    <%= render @releases %>
-    <%# <% @releases.each do |release| %>
-    <%#   <tr>
-    <%#     <td><%= release.app.name rescue "fuck" %></td>
-    <%#     <td><%= release.branch_name %></td>
-    <%#     <td><%= release.tag_name %></td>
-    <%#     <td><%= link_to 'Show', release %></td>
-    <%#     <td><%= link_to 'Edit', edit_release_path(release) %></td>
-    <%#     <td><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <%#   </tr>
-    <%# <% end %>
+     <% @releases.each do |release| %>
+       <tr>
+         <td><%= release.app.name rescue "fuck" %></td>
+         <td><%= release.branch_name %></td>
+         <td><%= release.tag_name %></td>
+         <td><%= link_to 'Show', release %></td>
+         <td><%= link_to 'Edit', edit_release_path(release) %></td>
+         <td><%= link_to 'Destroy', release, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       </tr>
+     <% end %>
   </tbody>
 </table>
 
