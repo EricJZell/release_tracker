@@ -2,18 +2,17 @@
 development:
   encoding: unicode
   adapter: postgresql
-  username: lglicksteen
-  database: release_tracker
+  database: release_tracker_dev
   host: localhost
+
 production:
   encoding: unicode
   adapter: postgresql
-  username: lglicksteen
-  database: release_tracker
+  database: release_tracker_production
   host: localhost
+  
 test:
   encoding: unicode
   adapter: postgresql
-  username: lglicksteen
-  database: release_tracker
+  database: release_tracker_test
   host: localhost
